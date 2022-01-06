@@ -3,7 +3,7 @@
 # simple-project
 Implementation of the Ford-Fulkerson algorithm.
 
-Execution : `./ftest.byte [infile] [source] [sink] [outfile]`
+Execution : `./ftest.native [infile] [source] [sink] [outfile]`
 
 Generate an image from the outfile dot file : `dot -Tsvg your-dot-file > some-output-file.svg`
 
@@ -15,7 +15,7 @@ Use-case of the Ford-Fulkerson algorithm (bipartite matching).
 
 The program match a set of students to a set of universities given their choices.
 
-Execution : `./ftest.byte [infile] [outfile]`
+Execution : `./ftest.native [infile] [outfile]`
 
 The infile has to be in the following format :
 ```
