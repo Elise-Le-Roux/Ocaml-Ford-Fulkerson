@@ -1,0 +1,43 @@
+% This is a graph.
+
+u "INSA Toulouse" 2
+u "INSA Lyon" 1
+u "Ecole Polytechnique" 2
+u "CentraleSupélec" 3
+
+s "Jean"
+s "Paul"
+s "Marie"
+s "Kevin"
+s "Laura"
+s "Sarah" 
+s "Pierre"
+s "Emilie"
+
+c "Jean" "INSA Toulouse"
+c "Jean" "INSA Lyon"
+
+c "Paul" "INSA Lyon"
+c "Paul" "Ecole Polytechnique"
+c "Paul" "CentraleSupélec"
+
+c "Marie" "CentraleSupélec"
+
+c "Kevin" "INSA Toulouse"
+c "Kevin" "Ecole Polytechnique"
+c "Kevin" "CentraleSupélec"
+
+c "Laura" "INSA Toulouse"
+c "Laura" "CentraleSupélec"
+
+c "Sarah" "INSA Lyon"
+c "Sarah" "Ecole Polytechnique"
+c "Sarah" "CentraleSupélec"
+
+c "Pierre" "INSA Toulouse"
+
+c "Emilie" "Ecole Polytechnique"
+c "Emilie" "CentraleSupélec"
+
+
+% End of graph

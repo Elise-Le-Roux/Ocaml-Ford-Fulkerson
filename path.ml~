@@ -1,0 +1,57 @@
+open Graph
+
+(* A path is a list of nodes. *)
+type path = id list
+
+(* find_path gr forbidden id1 id2 
+ *   returns None if no path can be found.
+ *   returns Some p if a path p from id1 to id2 has been found. 
+ *
+ *  forbidden is a list of forbidden nodes (they have already been visited)
+*)
+
+let rec first_elements = function 
+  | [] -> []
+  | (a,_) :: rest -> a :: (first_elements rest) (* faire version avec acumulateur *)
+
+let rec enlever_element e = function
+  | [] -> []
+  | x :: rest -> if x=e then rest else (x :: (enlever_element e rest)) (* faire version avec acumulateur *)
+  
+
+let rec find_path gr forbidden id1 id2 =
+  if id1 = id2 then Some [id1] else
+    let noeuds_fils =(List.filter (fun y -> not(List.mem y forbidden))  (first_elements ((List.filter (fun (id,lbl) -> lbl <> 0) (out_arcs gr id1))))) in (* Noeuds voisins de id1 qui ne sont pas déjà marqués *) (* pas sur que <> 0 soit nécessaire *)
+    let rec f_aux gr noeuds_fils id2 forbidden =
+      match noeuds_fils with
+      | x :: rest -> if (find_path gr forbidden x id2) = None then f_aux gr (enlever_element x noeuds_fils) id2 forbidden else (find_path gr forbidden x id2)
+      | [] -> None
+    in
+    match (f_aux gr noeuds_fils id2 (id1::forbidden)) with
+    | Some p -> Some (id1 :: p)
+    | None -> None
+
+let rec print_int_path = function
+  | Some p -> (match p with
+      | [] -> Printf.printf "\n %!"  
+      | x :: rest -> Printf.printf "  %d  " x; print_int_path (Some rest))
+  | None -> Printf.printf "Aucun path trouvé\n %!"  
+
+(* returns the minimal flow encountered on the given path 
+   Takes a residual graph *)
+let rec find_min gr path min =
+  let f_aux gr path min =
+      match path with
+      | [] -> min
+      | [x] -> min
+      | x :: ( y :: rest) -> match (find_arc gr x y) with
+        | Some lbl -> if lbl < min then find_min gr (y :: rest) lbl else find_min gr (y :: rest) min
+        | None -> failwith "invalid path"
+        in
+   f_aux gr path max_int
+    
+
+    
+    
+    
+    

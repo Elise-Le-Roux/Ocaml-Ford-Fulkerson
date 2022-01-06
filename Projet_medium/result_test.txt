@@ -1,0 +1,11 @@
+RESULTS 
+    "Emilie" -> "CentraleSupélec"
+    "Pierre" -> "INSA Toulouse"
+    "Laura" -> "INSA Toulouse"
+    "Marie" -> "CentraleSupélec"
+    "Kevin" -> "Ecole Polytechnique"
+    "Paul" -> "CentraleSupélec"
+    "Sarah" -> "Ecole Polytechnique"
+    "Jean" -> "INSA Lyon"
+
+Students without university : 

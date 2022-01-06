@@ -1,0 +1,11 @@
+AFFECTATIONS 
+    "Pierre" -> "INSA Toulouse"
+    "Emilie" -> "Ecole Polytechnique"
+    "Sarah" -> "INSA Lyon"
+    "Laura" -> "INSA Toulouse"
+    "Marie" -> "CentraleSupélec"
+    "Kevin" -> "INSA Toulouse"
+
+Students without affectation 
+    "Jean"
+    "Paul"
