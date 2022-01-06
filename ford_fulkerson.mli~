@@ -1,6 +1,0 @@
-open Graph
-
-
-val capacityToFlow: int graph -> (int*int) graph
-
-val flowToResidual: (int*int) graph -> int graph
