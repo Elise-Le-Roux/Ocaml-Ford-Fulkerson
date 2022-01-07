@@ -3,5 +3,8 @@ _build
 *.cmi
 *.cmo
 
+*.byte
+*.native
+
 *.mli~
 *.ml~
